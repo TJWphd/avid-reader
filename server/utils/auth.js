@@ -2,7 +2,7 @@ const { GraphQLError } = require("graphql");
 const jwt = require("jsonwebtoken");
 
 // sets token secret and expiration date
-const secret = "mysecretsshhhhh";
+const secret = "ivegotasecretttttt";
 const expiration = "2h";
 
 module.exports = {
@@ -31,7 +31,7 @@ module.exports = {
       req.user = data;
     } catch {
       console.log("Invalid token");
-      // return res.status(400).json({ message: "invalid token!" });
+      return res.status(401).json({ message: "not an authorized user" });
     }
     return req;
   },
