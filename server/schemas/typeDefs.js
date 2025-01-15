@@ -1,14 +1,5 @@
 const typeDefs = `
 
-  input BookInput {
-   bookId: String!
-   authors: [String]
-   description: String!
-   title: String!
-   image: String
-   link: String
-}
-
   type User {
     _id: ID!
     username: String!
@@ -17,9 +8,8 @@ const typeDefs = `
     savedBooks: [Book]
   }
 
-    type Book {
-    _id: ID!
-   bookId: String!
+  type Book {
+   bookId: ID!
    authors: [String]
    description: String!
    title: String!
@@ -32,6 +22,15 @@ const typeDefs = `
     user: User
   }
 
+  input BookInput {
+   bookId: String!
+   authors: [String]
+   description: String!
+   title: String!
+   image: String
+   link: String
+  }
+
   type Query {
     me: User
   }
@@ -40,7 +39,7 @@ const typeDefs = `
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth 
     saveBook(bookInput: BookInput): User
-    removeBook(id: ID!)
+    removeBook(bookId: ID!): User
   }
   
 `;
