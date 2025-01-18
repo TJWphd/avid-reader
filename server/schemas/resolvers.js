@@ -11,14 +11,14 @@ const resolvers = {
     },
   },
   Mutation: {
-    login: async (parent, args, context) => {
+    loginUser: async (_parent, args, context) => {
       const user = await User.findOne({
         $or: [{ username: args.username }, { email: args.email }],
       });
       if (!user) {
         throw AuthenticationError;
       }
-      const correctPw = await user.isCorrectPassword(body.password);
+      const correctPw = await user.isCorrectPassword(args.password);
       if (!correctPw) {
         throw AuthenticationError;
       }

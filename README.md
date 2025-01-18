@@ -27,7 +27,7 @@ manual testing
 
 Starter code from class: https://github.com/coding-boot-camp/solid-broccoli
 
-Thanks to John Young, Zac Warner, and Benicio Lopez at edX/UC Berkeley Full-Stack Bootcamp for help in addition to instruction.
+Thanks to John Young, Zac Warner, Alexis Javier, Erik Hoverston, and Benicio Lopez at edX/UC Berkeley Full-Stack Bootcamp for conceptual and coding assistance in addition to instruction.
 
 ## Contact
 
