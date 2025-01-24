@@ -35,16 +35,17 @@ const LoginForm = () => {
       const token = data.loginUser.token;
       Auth.login(token);
     } catch (err) {
-      console.error(err);
       setShowAlert(true);
     }
 
+    // resets form data
     setUserFormData({
-      username: "",
       email: "",
       password: "",
     });
   };
+
+  debugger;
 
   return (
     <>
@@ -55,7 +56,7 @@ const LoginForm = () => {
           show={showAlert}
           variant="danger"
         >
-          Something went wrong with your login credentials!
+          Your login failed! Check your credentials and try again.
         </Alert>
         <Form.Group className="mb-3">
           <Form.Label htmlFor="email">Email</Form.Label>
@@ -87,11 +88,11 @@ const LoginForm = () => {
           </Form.Control.Feedback>
         </Form.Group>
         <Button
-          disabled={!(userFormData.email && userFormData.password)}
+          disabled={loading || !(userFormData.email && userFormData.password)}
           type="submit"
           variant="success"
         >
-          Submit
+          {loading ? "Loading..." : "Submit"}
         </Button>
       </Form>
     </>

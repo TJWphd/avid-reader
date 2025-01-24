@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 
 import { ADDUSER } from "../utils/mutations";
+import { addUser } from "../utils/API";
 import { useQuery, useMutation } from "@apollo/client";
 
 import Auth from "../utils/auth";
@@ -35,24 +36,32 @@ const SignupForm = () => {
       event.stopPropagation();
     }
 
-    try {
-      const { data } = await addUser({
-        variables: { ...userFormData },
-      });
+    // setValidated(true);
 
-      //  const { token, user } = await response.json();
-      const token = data.addUser.token;
-      Auth.login(token);
+    try {
+      if (form.checkValidity()) {
+        const response = await addUser(userFormData);
+
+        if (!response.ok) {
+          throw new Error("something went wrong!");
+        }
+
+        const { token, user } = await response.json();
+        console.log(user);
+        Auth.login(token);
+
+        setUserFormData({ username: "", email: "", password: "" });
+        // setValidated(false);
+      }
     } catch (err) {
       console.error(err);
       setShowAlert(true);
     }
-
-    setUserFormData({
-      username: "",
-      email: "",
-      password: "",
-    });
+    // setUserFormData({
+    //   username: '',
+    //   email: '',
+    //   password: '',
+    // });
   };
 
   return (

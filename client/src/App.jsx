@@ -6,6 +6,8 @@ import {
   gql,
 } from "@apollo/client";
 import { Outlet } from "react-router-dom";
+import { createHttpLink } from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 
 // ---> '/graphql'
 
