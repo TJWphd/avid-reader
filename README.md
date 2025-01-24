@@ -32,4 +32,5 @@ Thanks to John Young, Zac Warner, Alexis Javier, Erik Hoverston, and Benicio Lop
 ## Contact
 
 [Github Profile](https://github.com/TJWphd)
+[LinkedIn](https://www.linkedin.com/in/thomas-white-phd/)
 [Email](mailto:tjwhitephd@gmail.com)
