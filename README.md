@@ -17,7 +17,7 @@ Avid Reader allows users to create secure profiles, log in, find books and add t
 
 Repo: https://github.com/TJWphd/avid-reader
 
-Deployment: https://tjwphd.github.io/avid-reader
+Deployment: https://avid-reader-tjw.onrender.com/
 
 ## Testing
 
